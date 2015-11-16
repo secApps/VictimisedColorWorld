@@ -400,7 +400,7 @@ public class MainActivity extends ActionBarActivity {
         float actualCropHeight = cropWindowHeight * scaleFactorHeight;
         Log.d("X>>",Float.toString(actualCropX+actualCropWidth)+"Y>>>"+Float.toString(actualCropY+actualCropHeight));
         // Crop the subset from the original Bitmap.
-        return Bitmap.createBitmap(mCurrentDisplayedBitmap, (int) actualCropX, (int) actualCropY, (int) actualCropWidth-50, (int) actualCropHeight);
+        return Bitmap.createBitmap(mCurrentDisplayedBitmap, (int) actualCropX, (int) actualCropY, (int) actualCropWidth, (int) actualCropHeight);
     }
 
     @Override
