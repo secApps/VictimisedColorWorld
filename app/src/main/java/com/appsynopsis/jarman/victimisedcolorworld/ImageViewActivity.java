@@ -9,7 +9,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.view.MenuItemCompat;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -30,7 +32,7 @@ import java.util.Random;
 /**
  * Created by nila on 11/16/15.
  */
-public class ImageViewActivity extends AppCompatActivity implements PicModeSelectDialogFragment.IPicModeSelectListener {
+public class ImageViewActivity extends ActionBarActivity implements PicModeSelectDialogFragment.IPicModeSelectListener {
 
     public static final String TAG = "ImageViewActivity";
     String ImagePATH=null;
@@ -46,6 +48,8 @@ public class ImageViewActivity extends AppCompatActivity implements PicModeSelec
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_view);
+        Toolbar toolbar= (Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         mBtnUpdatePic = (Button) findViewById(R.id.btnUpdatePic);
         mImageView = (ImageView) findViewById(R.id.iv_user_pic);
         mBtnUpdatePic.setOnClickListener(new View.OnClickListener() {
